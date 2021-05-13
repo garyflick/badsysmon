@@ -1,0 +1,91 @@
+<Sysmon schemaversion="4.50">
+	<!--SYSMON META CONFIG-->
+	<HashAlgorithms>md5,sha256,IMPHASH</HashAlgorithms> <!-- Both MD5 and SHA256 are the industry-standard algorithms. Remove IMPHASH if you do not use DLL import fingerprinting. -->
+
+	<EventFiltering>
+	
+	<RuleGroup name="" groupRelation="or">
+		<ProcessCreate onmatch="include">
+		</ProcessCreate>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<FileCreateTime onmatch="include">
+		</FileCreateTime>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<NetworkConnect onmatch="include">
+		</NetworkConnect>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<ProcessTerminate onmatch="include">
+		</ProcessTerminate>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<DriverLoad onmatch="include">
+		</DriverLoad>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<ImageLoad onmatch="include">
+		</ImageLoad>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<CreateRemoteThread onmatch="include">
+		</CreateRemoteThread>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<RawAccessRead onmatch="include">
+		</RawAccessRead>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<ProcessAccess onmatch="include">
+		</ProcessAccess>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<FileCreate onmatch="include">
+		</FileCreate>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<RegistryEvent onmatch="include">
+		</RegistryEvent>
+	</RuleGroup>
+	
+
+	<RuleGroup name="" groupRelation="or">
+		<FileCreateStreamHash onmatch="include">
+		</FileCreateStreamHash>
+	</RuleGroup>
+	
+
+	<RuleGroup name="" groupRelation="or">
+		<PipeEvent onmatch="include">
+		</PipeEvent>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<WmiEvent onmatch="include">
+		</WmiEvent>
+	</RuleGroup>
+	
+
+	<RuleGroup name="" groupRelation="or">
+		<DnsQuery onmatch="include">
+		</DnsQuery>
+	</RuleGroup>
+	
+	<RuleGroup name="" groupRelation="or">
+		<FileDelete onmatch="include">
+		</FileDelete>
+	</RuleGroup>
+	
+	</EventFiltering>
+</Sysmon>
